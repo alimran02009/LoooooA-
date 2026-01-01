@@ -110,3 +110,34 @@ if(hlsVideo){
     }
   });
 }
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+  const liveVideo = document.getElementById('liveSports');
+  const liveSrc = 'https://example.com/live/stream.m3u8'; // YOUR LIVE STREAM
+
+  if (Hls.isSupported()) {
+    const hls = new Hls({
+      liveSyncDurationCount: 3,
+      enableWorker: true
+    });
+    hls.loadSource(liveSrc);
+    hls.attachMedia(liveVideo);
+    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      liveVideo.play();
+    });
+
+    // Auto-recover if stream breaks
+    hls.on(Hls.Events.ERROR, function (event, data) {
+      if (data.fatal) {
+        hls.startLoad();
+      }
+    });
+
+  } else if (liveVideo.canPlayType('application/vnd.apple.mpegurl')) {
+    liveVideo.src = liveSrc;
+    liveVideo.addEventListener('loadedmetadata', () => {
+      liveVideo.play();
+    });
+  }
+</script>
