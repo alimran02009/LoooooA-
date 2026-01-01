@@ -86,3 +86,27 @@ document.querySelector(".search-box").addEventListener("submit", function(e){
     alert("No results found!");
   }
 });
+
+/* ===== LOOP MP4 PREVIEW ===== */
+const mp4Video = document.getElementById('trendingMP4');
+if(mp4Video){
+  const previewDuration = 60 * 5; // 5 minutes
+  mp4Video.addEventListener('timeupdate', ()=>{
+    if(mp4Video.currentTime >= previewDuration){
+      mp4Video.currentTime = 0;
+      mp4Video.play();
+    }
+  });
+}
+
+/* ===== LOOP HLS PREVIEW ===== */
+const hlsVideo = document.getElementById('trendingHLS');
+if(hlsVideo){
+  const previewDuration = 60*5; // 5 minutes
+  hlsVideo.addEventListener('timeupdate', ()=>{
+    if(hlsVideo.currentTime >= previewDuration){
+      hlsVideo.currentTime = 0;
+      hlsVideo.play();
+    }
+  });
+}
