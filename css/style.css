@@ -42,27 +42,7 @@ body {
   font-size:32px;
 }
 
-/* TOOLS */
-.tools {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:20px;
-  padding:40px;
-}
 
-.tool-card {
-  background:#fff;
-  padding:30px;
-  text-align:center;
-  border-radius:10px;
-  box-shadow:0 10px 20px rgba(0,0,0,.12);
-  transition:.4s;
-  transform:perspective(800px);
-}
-
-.tool-card:hover {
-  transform:rotateY(10deg) rotateX(5deg);
-}
 
 /* EMAIL */
 .email {
