@@ -135,14 +135,56 @@
 
 </section>
 
-<!-- EMAIL -->
-<section class="email">
-  <h2>Stay Updated</h2>
-  <form>
-    <input type="email" placeholder="Enter your email" required>
-    <button>Subscribe</button>
-  </form>
+<!-- ===== STAY UPDATED SECTION START ===== -->
+<section class="stay-updated">
+
+  <div class="stay-container">
+
+    <!-- LEFT -->
+    <div class="stay-left fade-up">
+      <h2>About Loooooa</h2>
+      <p>
+        Loooooa.com is a modern multi-platform hub for movies,
+        live sports, AI tools, online utilities and learning.
+      </p>
+      <p>
+        We focus on speed, simplicity and free access for everyone.
+      </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="stay-right float-3d">
+      <div class="email-box">
+        <h3>Stay Updated 🚀</h3>
+        <p>Get updates about new tools & features</p>
+
+        <!-- GOOGLE FORM CONNECT -->
+        <form 
+          action="https://docs.google.com/forms/d/e/FORM_ID/formResponse"
+          method="POST"
+          target="hidden_iframe"
+          onsubmit="formSubmitted()"
+        >
+          <input 
+            type="email"
+            name="entry.1234567890"
+            placeholder="Enter your email"
+            required
+          >
+          <button type="submit">Notify Me</button>
+        </form>
+
+        <span id="emailMsg"></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Hidden iframe for silent submit -->
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
 </section>
+<!-- ===== STAY UPDATED SECTION END ===== -->
 
 <footer>
   © 2026 loooooa.com
