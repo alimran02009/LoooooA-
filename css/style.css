@@ -1,102 +1,223 @@
-body {
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f5f7fa;
-  color:#222;
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* HEADER */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f9;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* =====================
+   HEADER
+===================== */
 .header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 30px;
-  background:#fff;
-  box-shadow:0 4px 15px rgba(0,0,0,.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header nav a {
-  margin-left:15px;
-  text-decoration:none;
-  color:#333;
+  margin-left: 18px;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
 }
 
-/* 3D LOGO */
+.header nav a:hover {
+  color: #000;
+}
+
+/* =====================
+   3D LOGO
+===================== */
 .logo-3d {
-  font-size:28px;
-  font-weight:bold;
-  color:#111;
-  transform:perspective(500px) rotateX(10deg);
-  text-shadow:2px 2px 0 #ccc, 4px 4px 0 #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #111;
+  transform: perspective(600px) rotateX(10deg);
+  text-shadow:
+    2px 2px 0 #ccc,
+    4px 4px 0 #aaa,
+    6px 6px 15px rgba(0,0,0,0.15);
 }
 
-/* HERO */
+/* =====================
+   HERO SECTION
+===================== */
 .hero {
-  text-align:center;
-  padding:80px 20px;
-  background:linear-gradient(135deg,#e3f2fd,#fff);
-  transform:perspective(800px) translateZ(20px);
+  padding: 90px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  transform: perspective(1000px) translateZ(20px);
 }
 
 .hero h1 {
-  font-size:32px;
+  font-size: 34px;
+  margin-bottom: 10px;
 }
 
-
-
-/* EMAIL */
-.email {
-  background:#fff;
-  padding:40px;
-  text-align:center;
+.hero p {
+  font-size: 17px;
+  color: #555;
 }
 
-.email input {
-  padding:10px;
-  width:220px;
-}
-
-.email button {
-  padding:10px 15px;
-  background:#000;
-  color:#fff;
-  border:none;
-}
-
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:15px;
-  font-size:14px;
-    }
-
+/* =====================
+   MAIN CARD SECTION
+===================== */
 .main-cards {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:30px;
-  padding:40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 50px 30px;
 }
 
+/* =====================
+   BIG CARD
+===================== */
 .big-card {
-  background:#fff;
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 15px 30px rgba(0,0,0,.15);
-  transition:.5s;
-  transform:perspective(1000px);
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transform: perspective(1200px);
 }
 
 .big-card:hover {
-  transform:translateY(-8px) rotateX(3deg);
-  box-shadow:0 25px 45px rgba(0,0,0,.25);
+  transform: translateY(-10px) rotateX(4deg);
+  box-shadow: 0 30px 55px rgba(0,0,0,0.25);
 }
 
+/* =====================
+   CARD IMAGE (PREVIEW)
+===================== */
 .big-card img {
-  width:100%;
-  height:200px;
-  object-fit:cover;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
 }
 
+/* =====================
+   CARD CONTENT
+===================== */
+.card-content {
+  padding: 22px;
+}
+
+.card-content h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: #222;
+  transform: translateY(-2px);
+}
+
+/* =====================
+   EMAIL SECTION
+===================== */
+.email {
+  background: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+  box-shadow: 0 -10px 25px rgba(0,0,0,0.05);
+}
+
+.email h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.email form {
+  margin-top: 10px;
+}
+
+.email input {
+  padding: 12px;
+  width: 240px;
+  max-width: 90%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.email button {
+  padding: 12px 18px;
+  margin-left: 6px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.email button:hover {
+  background: #222;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  text-align: center;
+  padding: 18px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* =====================
+   MOBILE OPTIMIZATION
+===================== */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .card-content h2 {
+    font-size: 20px;
+  }
+  }
 .card-content {
   padding:20px;
 }
