@@ -141,3 +141,49 @@ if(hlsVideo){
     });
   }
 </script>
+// 3D TILT FOR ABOUT CARD
+const tilt = document.querySelector(".tilt");
+
+tilt.addEventListener("mousemove", (e) => {
+  const rect = tilt.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const rotateX = ((y / rect.height) - 0.5) * 10;
+  const rotateY = ((x / rect.width) - 0.5) * -10;
+
+  tilt.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
+
+tilt.addEventListener("mouseleave", () => {
+  tilt.style.transform = "rotateX(0) rotateY(0)";
+});
+
+// GOOGLE FORM SUCCESS MESSAGE
+function formSuccess() {
+  document.getElementById("formMsg").innerText =
+    "✅ Thanks! You are successfully subscribed.";
+}
+// 3D TILT FOR ABOUT CARD
+const tilt = document.querySelector(".tilt");
+
+tilt.addEventListener("mousemove", (e) => {
+  const rect = tilt.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const rotateX = ((y / rect.height) - 0.5) * 10;
+  const rotateY = ((x / rect.width) - 0.5) * -10;
+
+  tilt.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
+
+tilt.addEventListener("mouseleave", () => {
+  tilt.style.transform = "rotateX(0) rotateY(0)";
+});
+
+// GOOGLE FORM SUCCESS MESSAGE
+function formSuccess() {
+  document.getElementById("formMsg").innerText =
+    "✅ Thanks! You are successfully subscribed.";
+}
