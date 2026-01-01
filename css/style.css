@@ -469,3 +469,54 @@ footer {
     font-size: 20px;
   }
 }
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.social-icon {
+  transition: .3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-6px) scale(1.2);
+}
+input, button {
+  transition: .3s ease;
+}
+
+input:hover, button:hover {
+  transform: translateY(-4px);
+}
+/* GLOBAL 3D HOVER */
+.hover-3d {
+  transition: transform .35s ease, box-shadow .35s ease;
+  transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+  transform: translateY(-8px) scale(1.04);
+}
+/* LOGO */
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  -webkit-background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
