@@ -530,9 +530,7 @@ input:hover, button:hover {
   padding: 0 20px 80px;
 }
 
-/* ===============================
-   BIG TOP CARD
-================================ */
+/* BIG CARD */
 .big-card {
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: #fff;
@@ -543,88 +541,31 @@ input:hover, button:hover {
   margin-bottom: 50px;
 }
 
-.big-card h2 {
-  font-size: 34px;
-  margin-bottom: 20px;
-}
-
-.big-card p {
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-/* ===============================
-   SMALL CARDS GRID
-================================ */
+/* SMALL CARDS */
 .small-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
-/* ===============================
-   SMALL CARD STYLE
-================================ */
+/* CARD STYLE */
 .about-card {
   background: #fff;
-  color: #333;
   padding: 35px;
   border-radius: 25px;
   box-shadow: 0 30px 60px rgba(0,0,0,0.35);
-  animation: floatCard 5s ease-in-out infinite;
 }
 
-.about-card h3 {
-  margin-bottom: 15px;
-  font-size: 22px;
-}
-
-.about-card p,
-.about-card ul {
-  color: #555;
-  line-height: 1.6;
-}
-
-.about-card ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.about-card ul li {
-  margin-bottom: 8px;
-}
-
-/* ===============================
-   CENTER LAST CARD
-================================ */
+/* CENTER CARD */
 .center-card {
-  grid-column: 1 / -1;   /* full row */
+  grid-column: 1 / -1;
   max-width: 520px;
   margin: auto;
 }
 
-/* ===============================
-   FLOAT ANIMATION
-================================ */
-@keyframes floatCard {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .small-cards {
     grid-template-columns: 1fr;
   }
-
-  .center-card {
-    max-width: 100%;
-  }
-
-  .big-card h2 {
-    font-size: 28px;
-  }
-   }
+}
