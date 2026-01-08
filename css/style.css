@@ -561,6 +561,14 @@ input:hover, button:hover {
   grid-column: 1 / -1;
   max-width: 520px;
   margin: auto;
+  width: 100%;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .center-card {
+    max-width: 100%;
+  }
 }
 
 /* RESPONSIVE */
