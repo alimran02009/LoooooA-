@@ -214,3 +214,26 @@ function handleFormSubmit() {
 function closePopup() {
   document.getElementById("successPopup").classList.remove("show");
     }
+
+<script>
+const cards = document.querySelectorAll('.animate-card');
+
+cards.forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const midX = rect.width / 2;
+    const midY = rect.height / 2;
+
+    const rotateX = ((y - midY) / midY) * 10; // tilt up/down
+    const rotateY = ((x - midX) / midX) * 10; // tilt left/right
+
+    card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.03)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)';
+  });
+});
+</script>
