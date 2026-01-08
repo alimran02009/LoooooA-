@@ -48,16 +48,69 @@
 
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="logo hover-3d">Loooooa</div>
-  <nav>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
- 
-</header>
+<!-- HEADER WRAPPER WITH PARTICLES -->
+<div class="header-wrapper">
+  <!-- Floating particles -->
+  <canvas id="header-particles"></canvas>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-left">
+      <span class="contact-info"><i class="fas fa-envelope"></i> info@loooooa.com</span>
+      <span class="contact-info"><i class="fas fa-phone"></i> +880 123 456 789</span>
+    </div>
+    <div class="top-right">
+      <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="header">
+    <!-- 3D LOGO -->
+    <div class="logo hover-3d" id="logo">Loooooa</div>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- NAVIGATION MENU -->
+    <nav class="nav" id="nav">
+      <ul>
+        <li>
+          <a href="#">Movies</a>
+          <div class="mega-menu">
+            <div class="mega-item"><a href="#">Latest</a></div>
+            <div class="mega-item"><a href="#">Trending</a></div>
+            <div class="mega-item"><a href="#">Top Rated</a></div>
+          </div>
+        </li>
+        <li>
+          <a href="#">Live Sports</a>
+          <div class="mega-menu">
+            <div class="mega-item"><a href="#">Football</a></div>
+            <div class="mega-item"><a href="#">Cricket</a></div>
+            <div class="mega-item"><a href="#">Tennis</a></div>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
+
+    <!-- Expandable Search -->
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search..." />
+      <ul id="suggestions" class="suggestions"></ul>
+      <button id="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+  </header>
+  </div>
 
 <!-- HERO -->
 <section class="hero">
