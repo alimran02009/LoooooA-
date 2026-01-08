@@ -237,3 +237,69 @@ cards.forEach(card => {
   });
 });
 </script>
+
+
+// Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+hamburger.addEventListener('click',()=>{
+  nav.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
+// Expandable search with suggestions
+const searchInput = document.getElementById('search');
+const searchBtn = document.getElementById('search-btn');
+const suggestions = document.getElementById('suggestions');
+const demoSuggestions = ["Movies", "Live Sports", "AI Tools", "SEO Tools", "Online Learning"];
+searchInput.addEventListener('input',()=>{
+  const val = searchInput.value.toLowerCase();
+  suggestions.innerHTML = "";
+  if(val.length>0){
+    suggestions.style.display="block";
+    demoSuggestions.forEach(item=>{
+      if(item.toLowerCase().includes(val)){
+        const li=document.createElement('li');
+        li.textContent=item;
+        li.onclick=()=>{ searchInput.value=item; suggestions.style.display="none"; };
+        suggestions.appendChild(li);
+      }
+    });
+  } else { suggestions.style.display="none"; }
+});
+searchBtn.addEventListener('click',()=>{
+  alert("Search for: "+searchInput.value);
+});
+
+// HEADER PARTICLES
+const canvas=document.getElementById('header-particles');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=150;
+let particles=[];
+for(let i=0;i<50;i++){
+  particles.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*2+1,
+    dx:(Math.random()-0.5)*1,
+    dy:(Math.random()-0.5)*1
+  });
+}
+function animateParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle="#0ff";
+    ctx.shadowBlur=10;
+    ctx.shadowColor="#0ff";
+    ctx.fill();
+    p.x+=p.dx; p.y+=p.dy;
+    if(p.x<0||p.x>canvas.width)p.dx*=-1;
+    if(p.y<0||p.y>canvas.height)p.dy*=-1;
+  });
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; });
