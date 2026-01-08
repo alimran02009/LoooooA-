@@ -204,3 +204,13 @@ document.querySelectorAll(".hover-3d").forEach(card => {
     card.style.transform = "rotateX(0) rotateY(0)";
   });
 });
+
+function handleFormSubmit() {
+  setTimeout(() => {
+    document.getElementById("successPopup").classList.add("show");
+  }, 500);
+}
+
+function closePopup() {
+  document.getElementById("successPopup").classList.remove("show");
+    }
