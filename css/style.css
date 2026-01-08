@@ -1072,20 +1072,21 @@ input:hover, button:hover {
    FOOTER
 ================================ */
 .site-footer {
-  background: #0f2027;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
   padding: 60px 20px 30px 20px;
   font-family: "Poppins", sans-serif;
+  perspective: 1000px; /* 3D perspective for hover */
 }
 
-/* FOOTER CONTAINER */
+/* FOOTER CONTAINER: 3 COLUMN ROW */
 .footer-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-between;
   gap: 30px;
   max-width: 1100px;
   margin: auto;
+  flex-wrap: wrap;
 }
 
 /* FOOTER COLUMN BASE */
@@ -1096,18 +1097,45 @@ input:hover, button:hover {
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.4);
   transition: all 0.4s ease;
+  flex: 1;
+  min-width: 250px;
+  transform-style: preserve-3d;
 }
 
+/* LOGO 3D HOVER */
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-logo:hover {
+  transform: rotateY(20deg) rotateX(10deg) scale(1.1);
+  color: #ff512f;
+}
+
+/* COLUMN HOVER 3D */
+.animate-card:hover {
+  transform: rotateX(2deg) rotateY(5deg) translateY(-10px) scale(1.03);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* COLUMN HEADINGS */
 .footer-col h3 {
   font-size: 1.6rem;
   margin-bottom: 15px;
 }
 
+/* PARAGRAPHS */
 .footer-col p {
   font-size: 1rem;
   line-height: 1.7;
 }
 
+/* LINKS */
 .footer-col ul {
   list-style: none;
   padding: 0;
@@ -1120,18 +1148,13 @@ input:hover, button:hover {
 .footer-col ul li a {
   color: #fff;
   text-decoration: none;
+  display: inline-block;
   transition: all 0.3s ease;
 }
 
 .footer-col ul li a:hover {
   color: #ff512f;
-  transform: translateX(5px);
-}
-
-/* HOVER 3D EFFECT */
-.animate-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  transform: translateX(8px) rotateY(5deg);
 }
 
 /* FOOTER BOTTOM TEXT */
@@ -1147,7 +1170,7 @@ input:hover, button:hover {
 ================================ */
 @media (max-width: 900px) {
   .footer-container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .footer-col {
