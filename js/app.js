@@ -1,4 +1,4 @@
-// =========================
+49// =========================
 // SEARCH DATA
 // =========================
 const searchData = [
@@ -303,3 +303,18 @@ function animateParticles(){
 }
 animateParticles();
 window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; });
+
+
+<script>
+document.querySelector('.search-toggle')?.addEventListener('click',()=>{
+  document.querySelector('.search-box').classList.toggle('active');
+});
+
+document.querySelector('.hamburger')?.addEventListener('click',()=>{
+  document.querySelector('.mobile-menu').style.right = "0";
+});
+
+document.querySelector('.mobile-search')?.addEventListener('click',()=>{
+  alert("Mobile search popup ready");
+});
+</script>
